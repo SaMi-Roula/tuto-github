@@ -1,21 +1,16 @@
-print("salut mec!\nque veut tu faire ?")
-print("1 - convertir de celcius en fahrenheit")
-print("2 - convertir de fahrenheit en celcius")
-choix = input("choisis une option (1 ou 2): ")
-while choix not in ["1", "2"]:
-    print("option invalide, veuillez choisir 1 ou 2")
-    choix = input("choisis une option (1 ou 2): ")
+print("Salut mec ! Comment ça va ?")
+print("aujourd'hui, on va convertir ensemble les temperatures de Celsius en Fahrenheit et vice versa !")
+choix = input("Souhaitez-vous convertir de Celsius en Fahrenheit (1) ou de Fahrenheit en Celsius (2) ? ")
+while choix not in  ["1", "2"]:
+    choix = input("Veuillez entrer 1 pour Celsius vers Fahrenheit ou 2 pour Fahrenheit vers Celsius : ")
+    print("Choix invalide. Veuillez entrer 1 ou 2.")
 if choix == "1":
-    celsius = float(input("entrez la temperature en celcius: "))
-    fahrenheit = (celsius * 9/5) + 32
-    print(f"{celsius}°C est égal à {fahrenheit}°F")
+    celcusius = float(input("Entrez la temperature en celsius : "))
+    fahrenheit = ((celcusius * 9) /5) + 32
+    print(f"La temperature en Fahrenheit est : {fahrenheit}°F")
 elif choix == "2":
-    fahrenheit = float(input("entrez la temperature en fahrenheit: "))
-    celsius = (fahrenheit - 32) * 5/9
-    print(f"{fahrenheit}°F est égal à {celsius}°C") 
+    fahrenheit = float(input("Entrez la temperature en Fahrenheit : "))
+    celsius = ((fahrenheit - 32) * 5) / 9
+    print(f"La temperature en Celsius est : {celsius}°C")
 else:
-    print("option invalide, veuillez choisir 1 ou 2")   
-print("Merci d'avoir utilisé le convertisseur de température !")
-print("Au revoir !")
-
-    
+    print("Choix invalide. Veuillez entrer 1 ou 2.")
