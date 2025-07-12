@@ -14,6 +14,8 @@ elif choix == "2":
     celsius = (fahrenheit - 32) * 5/9
     print(f"{fahrenheit}°F est égal à {celsius}°C") 
 else:
-    print("option invalide, veuillez choisir 1 ou 2")
+    print("option invalide, veuillez choisir 1 ou 2")   
+print("Merci d'avoir utilisé le convertisseur de température !")
+print("Au revoir !")
 
     
