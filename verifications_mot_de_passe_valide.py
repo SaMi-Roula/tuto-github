@@ -13,24 +13,30 @@ def verifier_mot_de_passe(mdp):
         erreurs.append("❌ Il faut au moins un chiffre.")
     if not any(c in "!@#$%^&*()-_=+[]{}|;:,.<>?/" for c in mdp):
         erreurs.append("❌ Il faut au moins un caractère spécial.")
-    
     return erreurs
 
 while True:
-    mot_de_passe = input("Veuillez entrer votre mot de passe : ")
-    erreurs = verifier_mot_de_passe(mot_de_passe)
-    
-    if not erreurs:
-        print("✅ Le mot de passe est valide.")
-    else:
-        print("Le mot de passe est invalide pour les raisons suivantes :")
-        for erreur in erreurs:
-            print(erreur)
-    
-    # Demander si on veut réessayer
-    reessayer = input("Voulez-vous réessayer ? (o/n) : ").lower()
+    # Demander un mot de passe valide
+    while True:
+        mot_de_passe = input("Veuillez entrer votre mot de passe : ")
+        erreurs = verifier_mot_de_passe(mot_de_passe)
+
+        if not erreurs:
+            print("✅ Le mot de passe est valide.\n")
+            break
+        else:
+            print("Le mot de passe est invalide pour les raisons suivantes :")
+            for erreur in erreurs:
+                print(erreur)
+            print("Veuillez réessayer.\n")
+
+    # Demander si l'utilisateur veut refaire un autre mot de passe
+    reessayer = input("Voulez-vous créer un nouveau mot de passe ? (o/n) : ").lower()
     while reessayer not in ['o', 'n']:
         reessayer = input("Réponse invalide. Entrez 'o' pour oui ou 'n' pour non : ").lower()
+
     if reessayer == 'n':
         print("Merci d'avoir utilisé le vérificateur de mot de passe ! À bientôt.")
         break
+    print("Recommençons !\n")
+    
